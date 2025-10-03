@@ -1,73 +1,41 @@
 import React, { useState } from "react";
+import Layout from "../components/Layout";
 import { FiBookOpen, FiMail, FiHelpCircle, FiUser, FiLogIn } from "react-icons/fi";
 import { MdOutlineAutoStories } from "react-icons/md";
 
 function Converter() {
   const [input, setInput] = useState("");
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#27174c] via-[#222a55] to-[#5f2990] flex flex-col relative">
-      {/* Navbar */}
-      <nav className="w-full flex items-center justify-between px-8 py-4 bg-[#151c2f] bg-opacity-80">
-        <div className="flex items-center gap-2 text-xl font-extrabold">
-          <span className="text-cyan-300 text-2xl">✧</span>
-          <span className="text-white">
-            Mangify
-          </span>
-        </div>
-        <div className="flex gap-2 items-center">
-          <a href="#" className="flex items-center gap-1 px-3 py-1 rounded-lg hover:text-pink-300 text-white">
-            <span className="inline-block">Home</span>
-          </a>
-          <a href="#" className="flex items-center gap-1 px-3 py-1 rounded-lg bg-[#23304d] text-cyan-200 font-bold ring-2 ring-cyan-400/40 mx-1">
-            <FiBookOpen className="inline-block" size={18} /> Converter
-          </a>
-          <a href="#" className="flex items-center gap-1 px-3 py-1 rounded-lg hover:text-pink-300 text-white">
-            About
-          </a>
-          <a href="#" className="flex items-center gap-1 px-3 py-1 rounded-lg hover:text-pink-300 text-white">
-            <FiHelpCircle size={17} /> FAQ
-          </a>
-          <a href="#" className="flex items-center gap-1 px-3 py-1 rounded-lg hover:text-pink-300 text-white">
-            <FiMail size={17} /> Contact
-          </a>
-          <a href="#" className="flex items-center gap-1 px-4 py-1 rounded-lg hover:text-cyan-300 text-white">
-            <FiLogIn size={18} /> Login
-          </a>
-          <a href="#" className="ml-2 px-4 py-2 rounded-xl font-bold bg-gradient-to-r from-cyan-400 to-pink-400 text-white shadow-lg hover:scale-105 transition">Sign Up</a>
-        </div>
-      </nav>
-
-      {/* Main Section */}
-      <main className="flex-1 flex flex-col px-5 py-6 items-center justify-start">
-        <h1 className="text-4xl md:text-5xl font-extrabold mt-4 bg-gradient-to-r from-cyan-300 to-pink-400 text-transparent bg-clip-text text-center">Manga Converter</h1>
-        <p className="mt-2 mb-6 text-lg md:text-xl text-gray-300 text-center">
-          Paste your history text and watch it transform into manga magic
-        </p>
-        <section className="w-full max-w-3xl rounded-2xl bg-[#211d3a] bg-opacity-80 border border-[#4e356e] shadow-xl p-6">
-          <label className="block text-white font-bold mb-2 text-lg">Enter History Text</label>
-          <textarea
-            value={input}
-            onChange={e => setInput(e.target.value)}
-            rows="7"
-            className="w-full bg-[#171436] border border-[#323373] rounded-xl p-4 text-base text-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 placeholder:text-gray-500 resize-none"
-            placeholder="Paste your history textbook paragraph here..."
-          />
-          <button
-            className="mt-6 w-full flex items-center justify-center gap-2 px-6 py-3 text-lg font-semibold rounded-xl bg-gradient-to-r from-cyan-400 to-pink-400 text-white shadow-lg hover:scale-[1.02] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
-            disabled={!input.trim()}
-          >
-            <MdOutlineAutoStories size={23} /> Convert to Manga
-          </button>
-          <div className="text-center text-sm text-gray-400 mt-3">
-            Sign in to save your manga stories and track quiz scores
-          </div>
-        </section>
-      </main>
-
-      <footer className="w-full py-4 text-center text-gray-300 text-sm font-medium bg-transparent mt-6">
-        © 2025 Mangify. Transform learning into an adventure.
-      </footer>
-    </div>
+    <Layout>
+      <div className="min-h-screen bg-gradient-to-br from-[#27174c] via-[#222a55] to-[#5f2990] flex flex-col relative">
+        {/* Main Section */}
+        <main className="flex-1 flex flex-col px-5 py-6 items-center justify-start">
+          <h1 className="text-4xl md:text-5xl font-extrabold mt-4 bg-gradient-to-r from-cyan-300 to-pink-400 text-transparent bg-clip-text text-center">Manga Converter</h1>
+          <p className="mt-2 mb-6 text-lg md:text-xl text-gray-300 text-center">
+            Paste your history text and watch it transform into manga magic
+          </p>
+          <section className="w-full max-w-3xl rounded-2xl bg-[#211d3a] bg-opacity-80 border border-[#4e356e] shadow-xl p-6">
+            <label className="block text-white font-bold mb-2 text-lg">Enter History Text</label>
+            <textarea
+              value={input}
+              onChange={e => setInput(e.target.value)}
+              rows="7"
+              className="w-full bg-[#171436] border border-[#323373] rounded-xl p-4 text-base text-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 placeholder:text-gray-500 resize-none"
+              placeholder="Paste your history textbook paragraph here..."
+            />
+            <button
+              className="mt-6 w-full flex items-center justify-center gap-2 px-6 py-3 text-lg font-semibold rounded-xl bg-gradient-to-r from-cyan-400 to-pink-400 text-white shadow-lg hover:scale-[1.02] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+              disabled={!input.trim()}
+            >
+              <MdOutlineAutoStories size={23} /> Convert to Manga
+            </button>
+            <div className="text-center text-sm text-gray-400 mt-3">
+              Sign in to save your manga stories and track quiz scores
+            </div>
+          </section>
+        </main>
+      </div>
+    </Layout>
   );
 }
 
