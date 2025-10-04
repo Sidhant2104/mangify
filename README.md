@@ -9,13 +9,16 @@
 
 **Project Name:** Mangify  
 
-**Purpose:** Convert regular images or content into manga-style visuals, making it fun and visually appealing.  
+**Purpose:** Convert regular history topics or paragraphs into manga-style visuals, making learning fun, interactive, and visually engaging.  
 
 **What This Project Does:**  
-- Converts images into manga-style illustrations.  
-- Provides an interactive and user-friendly interface built with Next.js.  
-- Fully responsive design for seamless experience on all devices.  
-- API routes ready for future expansion or integration.  
+- Converts history topics or paragraphs into **manga-style illustrations**.  
+- Displays content using **images and dialogue/text bubbles** for easy understanding.  
+- Provides an **interactive and user-friendly interface** built with Next.js.  
+- Fully **responsive design** for seamless experience on all devices.  
+- **API routes ready** for future expansion or integration.  
+- **Makes learning history fun and visually engaging**.
+
 
 ---
 
