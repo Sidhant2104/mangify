@@ -50,8 +50,19 @@ function FAQ() {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 flex flex-col">
-        <main className="flex-1 flex flex-col px-4 pb-8 items-center">
+      <div
+        className="min-h-screen w-full flex flex-col relative"
+        style={{
+          backgroundImage: "url('/jonathan-cooper-OOKnZA6nhqA-unsplash-modified.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 opacity-80 pointer-events-none" />
+        
+        <main className="flex-1 flex flex-col px-4 pb-8 items-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-pink-400 mt-10 mb-2 text-center">
             Frequently Asked Questions
           </h1>
@@ -91,7 +102,6 @@ function FAQ() {
               </div>
             ))}
           </div>
-
           {/* "Still have questions?" section */}
           <div className="w-full max-w-4xl mt-12 mb-4 rounded-2xl bg-indigo-900 bg-opacity-90 border border-indigo-500/30 p-10 flex flex-col items-center">
             <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-3 text-center">

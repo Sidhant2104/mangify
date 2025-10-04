@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
-import { FiBookOpen, FiMail, FiHelpCircle, FiLogIn } from "react-icons/fi";
+import { FiMail, FiHelpCircle } from "react-icons/fi";
 import { AiOutlineSend } from "react-icons/ai";
 
 const Contact = () => {
@@ -9,30 +9,40 @@ const Contact = () => {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
 
-  // Dummy handleSubmit function for the form
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({ name, email, subject, message });
     alert('Message sent! (Check console for data)');
-    // In a real application, you would send this data to a server here.
   };
 
   return (
     <Layout>
-      <div
-        className="min-h-screen flex flex-col relative"
+      <div className="min-h-screen flex flex-col relative overflow-hidden"
         style={{
           background: `radial-gradient(at 70% 0%, #4a007a 0%, transparent 50%),
                        radial-gradient(at 0% 100%, #2a0352 0%, transparent 50%),
                        linear-gradient(to bottom right, #200540, #100020)`
         }}
       >
-        <main className="flex-1 flex flex-col items-center justify-start px-2 pt-8">
+        {/* Faded Background Image */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: "url('/markus-spiske-wQuvshBx8A8-unsplash.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.18,
+            filter: "blur(2px)"
+          }}
+        />
+        <main className="flex-1 flex flex-col items-center justify-start px-2 pt-8 relative z-10">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-cyan-300 to-pink-400 text-transparent bg-clip-text text-center">
             Get In Touch
           </h1>
-          <p className="mb-8 text-lg md:text-xl text-gray-200 text-center">Have feedback or questions? We'd love to hear from you!</p>
-          
+          <p className="mb-8 text-lg md:text-xl text-gray-200 text-center">
+            Have feedback or questions? We&apos;d love to hear from you!
+          </p>
+
           {/* Contact Info Cards */}
           <div className="flex flex-wrap justify-center gap-6 w-full max-w-4xl mb-9">
             <div className="flex-1 min-w-[250px] bg-[#221d3f] rounded-xl border border-[#344a6d] px-8 py-6 flex items-center gap-4">
@@ -50,13 +60,12 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Contact Form */}
-          <form 
+          <form
             className="w-full max-w-3xl bg-[#221d3f] border border-[#344a6d] rounded-2xl py-8 px-6 md:px-10 flex flex-col gap-5 shadow-xl"
             onSubmit={handleSubmit}
           >
-            {/* Name Input */}
             <div>
               <label htmlFor="name" className="block text-white font-bold mb-1 text-lg">Your Name</label>
               <input
@@ -70,7 +79,6 @@ const Contact = () => {
               />
             </div>
 
-            {/* Email Input */}
             <div>
               <label htmlFor="email" className="block text-white font-bold mb-1 text-lg">Email Address</label>
               <input
@@ -84,7 +92,6 @@ const Contact = () => {
               />
             </div>
 
-            {/* Subject Dropdown */}
             <div>
               <label htmlFor="subject" className="block text-white font-bold mb-1 text-lg">Subject</label>
               <select
@@ -102,7 +109,6 @@ const Contact = () => {
               </select>
             </div>
 
-            {/* Message Textarea */}
             <div>
               <label htmlFor="message" className="block text-white font-bold mb-1 text-lg">Message</label>
               <textarea
@@ -115,7 +121,7 @@ const Contact = () => {
                 required
               />
             </div>
-            
+
             <button
               type="submit"
               className="mt-2 w-full flex items-center justify-center gap-2 px-6 py-3 text-lg font-semibold rounded-xl bg-gradient-to-r from-cyan-400 to-pink-400 text-white shadow-lg hover:scale-105 transition-all"

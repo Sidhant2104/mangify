@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
-import { FiBookOpen, FiMail, FiHelpCircle, FiLogIn } from "react-icons/fi";
 import { AiOutlineUserAdd } from "react-icons/ai";
 
 export default function Signup() {
@@ -11,14 +10,25 @@ export default function Signup() {
 
   return (
     <Layout>
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#27174c] via-[#222a55] to-[#5f2990] relative">
-        <main className="flex-1 flex flex-col items-center justify-center px-2 pt-12 mb-20">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#27174c] via-[#222a55] to-[#5f2990] relative overflow-hidden">
+        {/* Faded Background Image */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: "url('/erik-mclean-8SeJUmfahu0-unsplash.jpg')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.22,            // adjust for more/less fade
+            filter: 'blur(2px)'       // optional, for soft fade
+          }}
+        />
+        <main className="flex-1 flex flex-col items-center justify-center px-2 pt-12 mb-20 relative z-10">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-cyan-300 to-pink-400 text-transparent bg-clip-text text-center">
             Join Mangify
           </h1>
           <p className="mb-8 text-lg md:text-xl text-gray-200 text-center">Create your account and start learning</p>
-          
           <form className="w-full max-w-md bg-[#231d3d] border border-[#344a6d] rounded-2xl py-10 px-8 flex flex-col gap-5 shadow-xl">
+            {/* ... your form fields here ... */}
             <div>
               <label className="block text-white font-bold mb-1 text-lg">Username</label>
               <input

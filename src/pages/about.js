@@ -4,8 +4,15 @@ import Layout from "../components/Layout";
 export default function About() {
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 flex flex-col">
-        <main className="flex-1 flex flex-col items-center py-12 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 flex flex-col relative overflow-hidden">
+        {/* Fade manga background image */}
+        <img
+          src="/markus-spiske-wQuvshBx8A8-unsplash.jpg"
+          alt="Manga faded background"
+          className="absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-lighten pointer-events-none select-none"
+          style={{ zIndex: 0 }}
+        />
+        <main className="flex-1 flex flex-col items-center py-12 px-4 relative z-10">
           <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-pink-400 mb-2 mt-4">
             About <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-pink-400">Mangify</span>
           </h1>
@@ -62,7 +69,7 @@ export default function About() {
               <span className="text-2xl font-bold text-white">Why Manga?</span>
             </div>
             <div className="text-lg text-gray-200 pl-11 mb-2">
-              Manga is more than just Japanese comics – it's a powerful storytelling medium that:
+              Manga is more than just Japanese comics – it&apos;s a powerful storytelling medium that:
             </div>
             <ul className="pl-16 list-disc space-y-1 text-base">
               <li className="text-cyan-200">Increases engagement and information retention</li>

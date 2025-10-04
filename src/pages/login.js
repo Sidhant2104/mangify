@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
-import { FiBookOpen, FiMail, FiHelpCircle, FiLogIn } from "react-icons/fi";
 import { AiOutlineLogin } from "react-icons/ai";
 
 export default function Login() {
@@ -9,12 +8,27 @@ export default function Login() {
 
   return (
     <Layout>
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#27174c] via-[#222a55] to-[#5f2990] relative">
-        <main className="flex-1 flex flex-col items-center justify-center px-2 pt-8">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#27174c] via-[#222a55] to-[#5f2990] relative overflow-hidden">
+        {/* Background Image Layer */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url('/erik-mclean-8SeJUmfahu0-unsplash.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.25, // Adjust this value for more/less fade
+          }}
+        />
+        {/* Overlay for additional fading if needed */}
+        <div className="absolute inset-0 bg-[#27174c]/60 z-10" />
+
+        <main className="flex-1 flex flex-col items-center justify-center px-2 pt-8 relative z-20">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-cyan-300 to-pink-400 text-transparent bg-clip-text text-center">
             Welcome Back
           </h1>
-          <p className="mb-8 text-lg md:text-xl text-gray-200 text-center">Sign in to continue your manga journey</p>
+          <p className="mb-8 text-lg md:text-xl text-gray-200 text-center">
+            Sign in to continue your manga journey
+          </p>
 
           <form className="w-full max-w-md bg-[#221d3f] border border-[#344a6d] rounded-2xl py-10 px-8 flex flex-col gap-5 shadow-xl">
             <div>
